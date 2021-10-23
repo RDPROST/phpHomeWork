@@ -91,15 +91,15 @@ function mathOperation($arg1, $arg2, $operation){
 
 //5. Посмотреть на встроенные функции PHP. Используя имеющийся HTML-шаблон, вывести текущий год в подвале при помощи встроенных функций PHP.
 ?>
-<html>
-<head>
-</head>
-<body>
-<footer>
-    <?= Date('Y')?>
-</footer>
-</body>
-</html>
+    <html>
+    <head>
+    </head>
+    <body>
+    <footer>
+        <?= Date('Y')?>
+    </footer>
+    </body>
+    </html>
 <?php
 //6. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power($val, $pow), где $val – заданное число, $pow – степень.
 function power($val, $pow){
@@ -115,24 +115,24 @@ function power($val, $pow){
 //22 часа 15 минут
 //21 час 43 минуты
 
-    function timeStr($num, $end){
-        $num = $num % 100;
-        if ($num>=11 && $num<=19) {
-            $e=$end[2];
-        }
-        else {
-            $i = $num % 10;
-            switch ($i)
-            {
-                case (1): $e = $end[0]; break;
-                case (2):
-                case (3):
-                case (4): $e = $end[1]; break;
-                default: $e=$end[2];
-            }
-        }
-        return "$num $e";
+function timeStr($num, $end){
+    $num = $num % 100;
+    if ($num>=11 && $num<=19) {
+        $e=$end[2];
     }
+    else {
+        $i = $num % 10;
+        switch ($i)
+        {
+            case (1): $e = $end[0]; break;
+            case (2):
+            case (3):
+            case (4): $e = $end[1]; break;
+            default: $e=$end[2];
+        }
+    }
+    return "$num $e";
+}
 $hours = date('H');
 $minutes = date('i');
 echo timeStr($hours,array('час', 'часа', 'часов')).' '.timeStr($minutes,array('минута', 'минуты', 'минут'));
